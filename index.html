@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Shelf</title>
+    <link rel="shortcut icon" href="imgs/favcon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        #header{
+            z-index: 0;
+            transition: transform 1s ease-in-out;
+        }
+        html, body{
+            align-items: center;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: linear-gradient(90deg,cyan,#0773D8);
+        }
+        #img-celular-index{
+            position: absolute;
+            bottom: 0;
+            right: 11.5%;
+            height: 79%;
+        }
+        #div-index{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+            width: 70%;
+            height: 70vh;
+            font-family: "Rubik", sans-serif;
+        }
+        #triangulo-retangulo {
+            width: 0;
+            height: 0;
+            border-bottom: 30vh solid white;
+            border-right: 100vw solid transparent;
+
+        }
+        #logo-shelf-index{
+            margin-top: 12%;
+            height: 15%;
+        }
+        #text1{
+            font-size: 10vh;
+        }
+        #começar-index {
+            text-decoration: none;
+            margin-top: -5vh; /* Adicionado espaço acima do botão */
+            border-radius: 15px;
+            border: none;
+            background-color: white; /* Cor de fundo do botão */
+            color: cyan; /* Cor do texto do botão */
+            padding: 10px 20px; /* Espaçamento interno do botão */
+            font-size: 3vh; /* Tamanho da fonte do botão */
+            cursor: pointer; /* Cursor ao passar por cima do botão */
+            transition: background-color 0.3s, color 0.3s; /* Transição suave */
+            z-index: 9999;
+        } 
+        #começar-index:hover {
+            background-color: #0773D8;
+            color: white;
+        }
+        .animate {
+      transform: translateY(-100%);
+    }
+    #animacao-shelf{
+        height: 100vh;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        z-index: -9999;
+        
+    }
+    </style>
+</head>
+<body>
+    <img id="animacao-shelf" src="imgs/animacao-shelf.gif" alt="">
+<header id="header">
+    <img id="img-celular-index" src="imgs/img-celular-index.png" alt="">
+    <div id="div-index">
+        <img id="logo-shelf-index" src="imgs/logo-shelf-branco.png" alt="">
+        <h1 id="text1">bem vindo ao<br><strong>SISTEMA DE<br>ENTREGAS</strong></h1>
+        <button id="começar-index">Começar</button>
+    </div>
+    <div id="triangulo-retangulo"></div>
+    
+    <script>
+        document.getElementById('começar-index').addEventListener('click', function() {
+          document.querySelector('#header').classList.add('animate');
+        setTimeout(function() {
+                document.querySelector('#animacao-shelf').style.zIndex = '1';
+            }, 1000);
+        setTimeout(function() {
+                window.location.href = 'monitor-geral.html';
+            }, 3000); // Redireciona após 1 segundo para permitir a animação
+        });
+      </script>
+</header>
+    
+</body>
+</html>
